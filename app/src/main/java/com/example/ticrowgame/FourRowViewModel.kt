@@ -4,7 +4,7 @@ import androidx.lifecycle.ViewModel
 
 class FourRowViewModel : ViewModel() {
     var counter = 1
-    val rowCount = 5
+    val rowCount = 5 // this can be changed and the code will work for different dimensions
     val btnCount = rowCount * rowCount
     var playMatrix = Array(btnCount) { 0 }
     var gameState = ""
