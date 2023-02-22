@@ -32,8 +32,8 @@ class Adaptor(private val item: ArrayList<Int>) : RecyclerView.Adapter<Adaptor.V
 
             w1 = viewModel.seeIfWonHorizontal()
             if (!w1) w2 = viewModel.seeIfWonVertical()
-            if (!w2) w3 = viewModel.seeIfWonVertical()
-            if (!w3) w4 = viewModel.seeIfWonVertical()
+            if (!w2) w3 = viewModel.seeIfWonDiagonalOne()
+            if (!w3) w4 = viewModel.seeIfWonDiagonalTwo()
 
             if (w1 || w2 || w3 || w4) {
                 viewModel.playMatrix = Array(viewModel.btnCount) {(viewModel.counter+1)%2+1}
