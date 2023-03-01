@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/ticTacToeFragment"
+        android:icon="@drawable/baseline_games_24"
+        android:title="TicTacToe" />
+    <item
+        android:id="@+id/fourRowFragment"
+        android:icon="@drawable/baseline_table_rows_24"
+        android:title="4-in a row" />
+</menu>

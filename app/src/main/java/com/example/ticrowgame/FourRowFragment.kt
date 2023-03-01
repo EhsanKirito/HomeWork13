@@ -17,7 +17,7 @@ class FourRowFragment : Fragment(R.layout.fragment_four_row) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = DataBindingUtil.bind(view)!!
-        val numberOfColumns = 5  // in order to change dimension this variable needs to be changed as well
+        val numberOfColumns = FourRowViewModel.rowCount  // in order to change dimension this variable needs to be changed as well
         val rcView: RecyclerView = binding.recyclerView
         val adaptor = Adaptor(viewModel.fetchData(numberOfColumns*numberOfColumns-1))
         rcView.layoutManager = GridLayoutManager(context, numberOfColumns)

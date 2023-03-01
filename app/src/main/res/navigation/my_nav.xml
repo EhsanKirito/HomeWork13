@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/ticTacToeFragment">
+
+    <fragment
+        android:id="@+id/ticTacToeFragment"
+        android:name="com.example.ticrowgame.TicTacToeFragment"
+        android:label="TicTacToeFragment" />
+    <fragment
+        android:id="@+id/fourRowFragment"
+        android:name="com.example.ticrowgame.FourRowFragment"
+        android:label="FourRowFragment" />
+</navigation>

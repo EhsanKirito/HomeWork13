@@ -4,10 +4,11 @@ import androidx.lifecycle.ViewModel
 
 class FourRowViewModel : ViewModel() {
     var counter = 1
-    val rowCount = 5 // this can be changed and the code will work for different dimensions
+    companion object {
+        var rowCount = 5
+    }
     val btnCount = rowCount * rowCount
     var playMatrix = Array(btnCount) { 0 }
-    var gameState = ""
 
 
     //int returned is the index if the button which should be colored
@@ -119,7 +120,7 @@ class FourRowViewModel : ViewModel() {
                 j -= rowCount - 1
                 if (j % rowCount == rowCount - 1) {
                     winCounter = 0
-                    break
+//                    break
                 }
             }
         }
@@ -140,7 +141,7 @@ class FourRowViewModel : ViewModel() {
                 j = j - rowCount + 1
                 if (j % rowCount == rowCount - 1) { // break if it is on the right button
                     winCounter = 0
-                    break
+//                    break
                 }
             }
         }
