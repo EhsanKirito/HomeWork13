@@ -1,26 +1,42 @@
 package com.example.ticrowgame
 
 import androidx.lifecycle.ViewModel
+import kotlin.properties.Delegates
 
 class FourRowViewModel : ViewModel() {
     var counter = 1
     companion object {
         var rowCount = 5
+        val columnCount = 5
     }
-    val btnCount = rowCount * rowCount
+    val btnCount = rowCount * columnCount
     var playMatrix = Array(btnCount) { 0 }
-
+    var playedIndex by Delegates.notNull<Int>()
 
     //int returned is the index if the button which should be colored
     fun turnPlayed(pos: Int) {
-        val row = pos % rowCount
+        val column = pos % columnCount
         for (i in btnCount - 1 downTo 0) {
-            if (i % rowCount == row) {
+            if (i % columnCount == column) {
                 if (playMatrix[i] == 0) {
                     playMatrix[i] = (counter % 2) + 1
+                    playedIndex = i
                     counter++
                     break
                 }
+            }
+        }
+    }
+
+    fun winner(playedIndex:Int){
+        val row = (playedIndex / columnCount)
+        val column = playedIndex% columnCount
+        var counter = 0
+        for (i in row* columnCount..(row+1)*columnCount-2){
+            if (playMatrix[i]==playMatrix[i+1]){
+                counter++
+            } else {
+                counter = 0
             }
         }
     }

@@ -24,7 +24,7 @@ class Adaptor(private val item: ArrayList<Int>) : RecyclerView.Adapter<Adaptor.V
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-//        holder.btnView.text = viewModel.playMatrix[position].toString()
+
         holder.btnView.setBackgroundColor(
             (if (viewModel.playMatrix[position]==1) Color.RED
             else if (viewModel.playMatrix[position] == 2) {
